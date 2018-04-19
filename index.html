@@ -90,7 +90,7 @@
     }
 
     // Get GeoJSON and put on it on the map when it loads
-    airports= L.geoJson.ajax("assets/airports.geojson", {
+    airports= L.geoJson.ajax("/assets/airports.geojson", {
         // assign a function to the onEachFeature parameter of the 'AIRPORTS' object.
         // Then each (point) feature will bind a popup window.
         // The content of the popup window is the value of `feature.properties.AIRPT_CNTRL`
@@ -139,7 +139,7 @@
     // 8. Add county polygons
     // create counties variable, and assign null to it.
     var states = null;
-    states = L.geoJson.ajax("assets/us-states.geojson", {
+    states = L.geoJson.ajax("/assets/us-states.geojson", {
         style: style,
         onEachFeature: function (feature, label) {
             label.bindTooltip(feature.properties.name, {className: 'feature-label', permanent:true, direction: 'center'});
